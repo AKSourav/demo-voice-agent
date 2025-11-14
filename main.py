@@ -20,7 +20,6 @@ class Agent:
         self.tts = TextToSpeech(os.environ["ELEVEN_API_KEY"])
         self.audio = AudioCapture(sample_rate, self.vad, self.queue, self.tts)
         
-        # Use local Whisper STT (ultra-fast, no API needed)
         try:
             self.stt = SpeechToText()
             logger.info("Using Whisper STT")
